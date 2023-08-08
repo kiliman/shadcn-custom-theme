@@ -68,7 +68,8 @@ function generateTheme(theme, customColors) {
     let customColor = customColors[color];
     // hard-coded color like red-500 so just return it directly
     if (!customColor) {
-      customTheme[key] = getHsl(value, value);
+      let newColor = twColors[color][tint];
+      customTheme[key] = getHsl(newColor, value);
       return;
     }
 

@@ -2,15 +2,15 @@
   "name": "shadcn-custom-theme",
   "version": "0.1.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "shadcn-custom-theme": "index.js"
   },
   "author": {
     "name": "kiliman",
     "email": "kiliman@gmail.com"
   },
   "license": "MIT",
-  "description": "",
+  "description": "This tool generate a custom theme similar to the ones created by the [shadcn/ui Themes website](https://ui.shadcn.com/themes).  You can specify the primary, secondary, accent, and gray colors. The color name should be one of the default Tailwind color names (e.g. red, green, blue, indigo, etc.) The `primary` color is required, the rest defaults to Tailwind `gray`.",
   "dependencies": {
     "hex-to-hsl": "^1.0.2",
     "hsl-to-hex": "^1.0.0",

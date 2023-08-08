@@ -1,6 +1,6 @@
 {
   "name": "shadcn-custom-theme",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "bin": {
     "shadcn-custom-theme": "cli.js"

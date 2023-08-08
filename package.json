@@ -1,10 +1,16 @@
 {
   "name": "shadcn-custom-theme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "bin": {
-    "shadcn-custom-theme": "index.js"
+    "shadcn-custom-theme": "cli.js"
   },
+  "files": [
+    "cli.js",
+    "index.js",
+    "theme.json",
+    "README.md"
+  ],
   "author": {
     "name": "kiliman",
     "email": "kiliman@gmail.com"

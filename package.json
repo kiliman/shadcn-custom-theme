@@ -1,0 +1,20 @@
+{
+  "name": "shadcn-custom-theme",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "kiliman",
+    "email": "kiliman@gmail.com"
+  },
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "hex-to-hsl": "^1.0.2",
+    "hsl-to-hex": "^1.0.0",
+    "nearest-color": "^0.4.4",
+    "tailwindcss": "^3.3.3"
+  }
+}

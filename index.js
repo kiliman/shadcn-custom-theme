@@ -12,37 +12,39 @@ let customColors = {
   gray: "gray",
 };
 
-if (process.argv.length < 3) {
-  console.error(
-    `USAGE: shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=COLOR]`
-  );
-  process.exit(1);
+function main() {
+  if (process.argv.length < 3) {
+    console.error(
+      `USAGE: shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=COLOR]`
+    );
+    process.exit(1);
+  }
+
+  process.argv.slice(2).forEach((arg) => {
+    const [key, value] = arg.split("=");
+    if (!key || !value) return;
+    customColors[key] = value;
+  });
+
+  if (customColors.primary === null) {
+    console.error("primary color is required");
+    process.exit(1);
+  }
+
+  let theme = {
+    light: generateTheme("light", customColors),
+    dark: generateTheme("dark", customColors),
+  };
+
+  console.log("@layer base {");
+  console.log("  :root {");
+  dumpTheme(theme.light);
+  console.log("  }\n");
+  console.log("  .dark {");
+  dumpTheme(theme.dark);
+  console.log("  }");
+  console.log("}");
 }
-
-process.argv.slice(2).forEach((arg) => {
-  const [key, value] = arg.split("=");
-  if (!key || !value) return;
-  customColors[key] = value;
-});
-
-if (customColors.primary === null) {
-  console.error("primary color is required");
-  process.exit(1);
-}
-
-let theme = {
-  light: generateTheme("light", customColors),
-  dark: generateTheme("dark", customColors),
-};
-
-console.log("@layer base {");
-console.log("  :root {");
-dumpTheme(theme.light);
-console.log("  }\n");
-console.log("  .dark {");
-dumpTheme(theme.dark);
-console.log("  }");
-console.log("}");
 
 function dumpTheme(theme) {
   Object.entries(theme).forEach(([key, value]) => {
@@ -82,3 +84,5 @@ function getHsl(color, twColor) {
   const [h, s, l] = hex2hsl(color);
   return `${h} ${s}% ${l}% /* ${twColor} */`;
 }
+
+module.exports = { main };

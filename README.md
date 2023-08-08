@@ -37,7 +37,7 @@ Will output the following:
     --muted-foreground: 0 0% 46% /* neutral-500 */;
     --accent: 326 78% 95% /* pink-100 */;
     --accent-foreground: 336 70% 31% /* pink-900 */;
-    --destructive: 0 0% 0% /* red-500 */;
+    --destructive: 0 85% 61% /* red-500 */;
     --destructive-foreground: 0 0% 99% /* neutral-50 */;
     --border: 0 0% 90% /* neutral-200 */;
     --input: 0 0% 90% /* neutral-200 */;
@@ -60,7 +60,7 @@ Will output the following:
     --muted-foreground: 0 0% 64% /* neutral-400 */;
     --accent: 336 75% 36% /* pink-800 */;
     --accent-foreground: 328 74% 98% /* pink-50 */;
-    --destructive: 0 0% 0% /* red-900 */;
+    --destructive: 0 63% 31% /* red-900 */;
     --destructive-foreground: 0 0% 99% /* neutral-50 */;
     --border: 0 0% 15% /* neutral-800 */;
     --input: 0 0% 15% /* neutral-800 */;

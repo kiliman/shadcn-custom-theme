@@ -8,9 +8,11 @@ required, the rest defaults to Tailwind `gray`.
 
 ## Usage
 
-`npx shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=color]`
+`npx shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=color] [template=TEMPLATE.json]`
 
 This will output the CSS variables that you can paste into your `global.css`.
+
+You can also specify a `TEMPLATE.json` file which has the default colors. [See below for example](#templatejson).
 
 For example
 
@@ -71,3 +73,62 @@ Will output the following:
 
 <img src="./images/light-theme.png" style="max-width: 720px;">
 <img src="./images/dark-theme.png" style="max-width: 720px;">
+
+## TEMPLATE.json
+
+This has the colors/tints for each CSS variable.
+
+> NOTE: colors prefixed with `primary`, `secondary`, `accent`, and `gray` will
+> be replaced with the color value specified as CLI arguments. All other colors
+> will be used directly, like `red-500`.
+
+The following is the default theme template. You can override this by specifying
+the `template=TEMPLATE.json` file.
+
+```json
+{
+  "light": {
+    "--background": "white",
+    "--foreground": "gray-950",
+    "--card": "white",
+    "--card-foreground": "gray-950",
+    "--popover": "white",
+    "--popover-foreground": "gray-950",
+    "--primary": "primary-600",
+    "--primary-foreground": "primary-50",
+    "--secondary": "secondary-100",
+    "--secondary-foreground": "secondary-900",
+    "--muted": "gray-100",
+    "--muted-foreground": "gray-500",
+    "--accent": "accent-100",
+    "--accent-foreground": "accent-900",
+    "--destructive": "red-500",
+    "--destructive-foreground": "gray-50",
+    "--border": "gray-200",
+    "--input": "gray-200",
+    "--ring": "primary-600",
+    "--radius": "0.5rem"
+  },
+  "dark": {
+    "--background": "gray-950",
+    "--foreground": "gray-50",
+    "--card": "gray-950",
+    "--card-foreground": "gray-50",
+    "--popover": "gray-950",
+    "--popover-foreground": "gray-50",
+    "--primary": "primary-600",
+    "--primary-foreground": "primary-50",
+    "--secondary": "secondary-800",
+    "--secondary-foreground": "secondary-50",
+    "--muted": "gray-800",
+    "--muted-foreground": "gray-400",
+    "--accent": "accent-800",
+    "--accent-foreground": "accent-50",
+    "--destructive": "red-900",
+    "--destructive-foreground": "gray-50",
+    "--border": "gray-800",
+    "--input": "gray-800",
+    "--ring": "primary-600"
+  }
+}
+```

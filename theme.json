@@ -19,7 +19,7 @@
     "--border": "gray-200",
     "--input": "gray-200",
     "--ring": "primary-600",
-    "--radius": "0.75rem"
+    "--radius": "0.5rem"
   },
   "dark": {
     "--background": "gray-950",

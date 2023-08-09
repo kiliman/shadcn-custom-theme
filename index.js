@@ -3,7 +3,7 @@
 
 const twColors = require("tailwindcss/colors");
 const hex2hsl = require("hex-to-hsl");
-const template = require("./theme.json");
+let template = require("./theme.json");
 
 let customColors = {
   primary: null,
@@ -15,7 +15,7 @@ let customColors = {
 function main() {
   if (process.argv.length < 3) {
     console.error(
-      `USAGE: shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=COLOR]`
+      `USAGE: shadcn-custom-theme primary=COLOR [secondary=COLOR] [accent=COLOR] [gray=COLOR] [template=TEMPLATE.json]`
     );
     process.exit(1);
   }
@@ -23,7 +23,11 @@ function main() {
   process.argv.slice(2).forEach((arg) => {
     const [key, value] = arg.split("=");
     if (!key || !value) return;
-    customColors[key] = value;
+    if (key === "template") {
+      template = require(`./${value}`);
+    } else {
+      customColors[key] = value;
+    }
   });
 
   if (customColors.primary === null) {

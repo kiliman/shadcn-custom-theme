@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.4
+
+- 🐛 Fix loading of custom template to be relative to cwd
+- 🔨 Only process Tailwind colors and passthrough the rest as is
+
 ## v0.1.3
 
 - ✨ Add argument to specify custom theme template

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.3
+
+- ✨ Add argument to specify custom theme template
+
 ## v0.1.2
 
 - 🐛 Generate correct color for hard-coded value like red-900

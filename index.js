@@ -1,6 +1,7 @@
 // This tool will generate a custom shadcn/ui theme
 // You can specify the primary, secondary, accent, and gray colors
 
+const path = require("path");
 const twColors = require("tailwindcss/colors");
 const hex2hsl = require("hex-to-hsl");
 let template = require("./theme.json");
@@ -24,7 +25,7 @@ function main() {
     const [key, value] = arg.split("=");
     if (!key || !value) return;
     if (key === "template") {
-      template = require(`./${value}`);
+      template = require(path.join(process.cwd(), value));
     } else {
       customColors[key] = value;
     }

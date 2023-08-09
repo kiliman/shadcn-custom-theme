@@ -60,7 +60,8 @@ function dumpTheme(theme) {
 function generateTheme(theme, customColors) {
   let customTheme = {};
   Object.entries(template[theme]).forEach(([key, value]) => {
-    if (key === "--radius") {
+    // if not a tailwind color, just return it directly
+    if (!value.match(/black|white|\w+-\d+/)) {
       customTheme[key] = value;
       return;
     }
